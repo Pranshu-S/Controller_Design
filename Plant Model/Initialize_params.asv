@@ -1,0 +1,25 @@
+%% Model - 
+
+% [x_dot; x_dot_dot] = [0 1; 4.1*10^4 0][x; x_dot] + [0; -9.12]i
+% y = [1 0;0 1][x; x_dot] + [0; 0]i
+% To get LQR controller -
+%% Initial things
+
+clear all
+close all
+clc
+
+%% System Declaration
+
+A = [0, 1; 4.1*10^4, 0];
+B = [0; -9.12];
+C = [1 0;0 1];
+D = 0;
+
+%% LQR
+
+Q = eye(2);
+R = 1;
+K = lqr(A,B,Q,R);
+G = -inv(C*inv(A-B*K)*B);
+
