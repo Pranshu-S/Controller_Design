@@ -43,8 +43,6 @@ R = 10;
 Q_k = eye(2);
 R_k = eye(2);
 
-[L,P,E] = lqe(A,Q_k,C,Q_k,R_k);
 Kf = (lqr(A',C',Q_k,R_k))';
-
 
 sysKF = ss(A-Kf*C, [B Kf], eye(2), 0*[B Kf]);
