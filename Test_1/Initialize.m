@@ -26,9 +26,9 @@ Observability_rank = rank(Observability_matrix)
 
 %% LQR
 % 
-% Q = [0.5, 0; 0, 0.2];
-% R = 0.5;
-% K = lqr(A,B,Q,R);
-% G = C*inv(A-B*K)*B
-% % G = -inv(C*inv(A-B*K)*B);
+Q = [0.5, 0; 0, 0.2];
+R = 0.5;
+K = lqr(A,B,Q,R);
+G = C*inv(A-B*K)*B
+% G = -inv(C*inv(A-B*K)*B);
 
