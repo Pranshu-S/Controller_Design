@@ -29,14 +29,14 @@ Observability_rank = rank(Observability_matrix);
 
 %% System Model without stability
 
-% sys1 = ss(A,[B, G],C,zeros(2,3), 0.01);
-% t = 0:0.01:4;
+sys1 = ss(A,[B, G],C,zeros(2,3), 0.01);
+t = 0:0.01:4;
 % step(sys1, t);
 
 %% LQR
 N = 0;
 Q = eye(2)*3;
-R = 1;
+R = ;
 
 [Kc, sc, ec] = lqr(A,B,Q,R,N);
 

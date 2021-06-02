@@ -11,7 +11,7 @@ D = [0;0];
 
 % Controller design
 Q = eye(2)*3;
-R = 1;
+R = 3;
 M_a = rank(ctrb(A,B));
 P = care(A,B,Q,R);
 K_u  = inv(R)*B'*P;
@@ -22,8 +22,8 @@ X(:,1) = [1;0];
 y(:,1) = C*X;
 
 % Observer design
-Q_k = eye(2);
-R_k = eye(2);
+Q_k = eye(2)*5;
+R_k = eye(2)*0.00846698*100;
 P_k = care(A',C',Q_k,R_k);
 K_k = P_k*C'*inv(R_k);
 L = K_k;
