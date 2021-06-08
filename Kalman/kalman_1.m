@@ -23,7 +23,7 @@ y(:,1) = C*X;
 
 % Observer design
 Q_k = eye(2);
-R_k = eye(2);
+R_k = eye(2)*0.00846698;
 P_k = care(A',C',Q_k,R_k);
 K_k = P_k*C'*inv(R_k);
 L = K_k;
